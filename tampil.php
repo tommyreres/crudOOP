@@ -17,22 +17,21 @@ $data_identitas = $db->tampil_data();
 	<nav>
 		<ul>
 			<li class="active"><a href="index.php">Home</a></li>
-			<li><a href="tampil.php">Data</a></li>
-			<li><a href="#">About</a></li>
+			<li><a href="tampil.php">Lihat Data</a></li>
+			<li class="sugul"><a href="logout.php">Logout</a></li>
 		</ul>
 	</nav>
 	</div>
 </header>
 <head>
-	<h2 align="center">Tampil Data<br/>
-					   Belajar OOP Dasar</h2>
+	<h2 align="center">Tampil Data</h2>
 </head>
 <body>
 <table border="0" align="center" cellpadding="1" cellspacing="0" width="800px">
 <tr><td><a href="tambah_data.php"><input type="button" Value="Tambah Data"></a></td></tr>
 </table>
 <table border="1" align="center" cellpadding="1" cellspacing="0" width="800px">
-		<thead>
+		<thead id="tampilan">
 		<tr>
 			<th>No</th>
 			<th>Nama Mahasiswa</th>

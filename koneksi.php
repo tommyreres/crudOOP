@@ -5,7 +5,7 @@ class database{
 	var $username = "root";
 	var $password = "";
 	var $database = "identitas";
-	var $koneksi = "";
+	// var $koneksi = "";
 	function __construct(){
 		$this->koneksi = mysqli_connect($this->host, $this->username, $this->password,$this->database);
 		if (mysqli_connect_errno()){
@@ -20,6 +20,17 @@ class database{
 			$hasil[] = $row;
 		}
 		return $hasil;
+	}
+
+	function login($username,$password,$level)
+	{
+		$query =mysqli_query($this->koneksi,"insert into test values ('','$username','$password','$level')");
+	}
+
+	function get($id)
+	{
+		$query =mysqli_query($this->koneksi,"select * from test where id='$id'");
+		return $query->fetch_array();
 	}
 
 	function tambah_data($nama,$lahir,$jk,$jurusan,$alamat)

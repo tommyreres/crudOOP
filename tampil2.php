@@ -1,6 +1,11 @@
+<?php 	
+include('koneksi.php');
+$db = new database();
+$data_identitas = $db->tampil_data();
+?>
 <html>
 <head>
-	<title>Belajar OOP Dasar</title>
+	<title>Ngoding Sakit Kepala Sebelah | Welcome</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -13,60 +18,53 @@
 		<ul>
 			<li class="active"><a href="index.php">Home</a></li>
 			<li><a href="tampil.php">Lihat Data</a></li>
-			<li><a href="#">About</a></li>
+			<li class="sugul"><a href="logout.php">Logout</a></li>
 		</ul>
 	</nav>
 	</div>
 </header>
-<h2 align="center">Tambah Data</h2>
-<form method="post" action="proses.php?action=add">
-<table align="center">
-	<tr>
-		<td>Nama Mahasiswa</td>
-		<td>:</td>
-		<td><input type="text" name="nama"/></td>
-	</tr>
-
-	<tr>
-		<td>Tanggal Lahir</td>
-		<td>:</td>
-		<td><input type="date" name="lahir"/></td>
-	</tr>
-	<tr>
-		<td>Jenis Kelamin</td>
-		<td>:</td>
-		<td>
-			<input type="radio" name="jk" value="Laki-Laki" checked>Laki-Laki
-			<input type="radio" name="jk" value="Perempuan">Perempuan
-		</td>
-	</tr>
-	<tr>
-		<td>Jurusan</td>
-		<td>:</td>
-		<td>
-			<select name="jurusan">
-				<option value="D3 Manajemen Informatika">D3 Manajemen Informatika</option>
-				<option value="D3 Teknik Komputer">D3 Teknik Komputer</option>
-				<option value="S1 Rekayasa Perangkat Lunak">S1 Rekayasa Perangkat Lunak</option>
-				<option value="S1 Teknik Informatika">S1 Teknik Informatika</option>
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td>Alamat</td>
-		<td>:</td>
-		<td><textarea name="alamat" cols="30" rows="4"></textarea></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td></td>
-		<td><input type="submit" name="tombol" value="Simpan"/></td>
-	</tr>
+<head>
+	<h2 align="center">Tampil Data </h2>
+</head>
+<body>
+<table border="0" align="center" cellpadding="1" cellspacing="0" width="800px">
 </table>
+<table border="1" align="center" cellpadding="1" cellspacing="0" width="800px">
+		<thead id="tampilan">
+		<tr>
+			<th>No</th>
+			<th>Nama Mahasiswa</th>
+			<th>Tanggal Lahir</th>
+			<th>Jenis Kelamin</th>
+			<th>Jurusan</th>
+			<th>Alamat</th>
+			<th>Opsi</th>
+		</tr>
+		</thead>
+		<?php 
+		$no = 1;
+		foreach($data_identitas as $row){
+			?>
+			<tr>
+				<td><?php echo $no++; ?></td>
+				<td><?php echo $row['nama']; ?></td>
+				<td><?php echo $row['lahir']; ?></td>
+				<td><?php echo $row['jk']; ?></td>
+				<td><?php echo $row['jurusan']; ?></td>
+				<td><?php echo $row['alamat']; ?></td>
+				<td>
+					<a href="edit.php?id=<?php echo $row['nim']; ?>">Update</a> ||
+					<a href="proses.php?action=delete&id=<?php echo $row['nim']; ?>">Delete</a>
+				</td>
+			</tr>
+			<?php 
+		}
+		?>
+	</table>
 <br/>
 <section id="baru">
 	<div class="container">
-		<h1> Jangan ngoding kalo gamau pusing ! </h1>
+		<h1> Ngapain kesini? Udah konsul dosen atau belum?</h1>
 	</div>
 </section>
 <section id="boxes">
@@ -93,6 +91,5 @@
 		<i>Ngoding Dapat Menyebabkan Sakit Kapala Sebelah, Copyright @2019</i>
 	</p>
 </footer>
-</form>
 </body>
 </html>

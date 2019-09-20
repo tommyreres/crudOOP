@@ -14,14 +14,28 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Belajar OOP Dasar</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<h3>Update Data Barang</h3>
-<hr/>
+<header>
+	<div class="container">
+	<div id="merk">
+		<h1>Ngoding Sakit Kepala Sebelah</h1>
+	</div>
+	<nav>
+		<ul>
+			<li class="active"><a href="index.php">Home</a></li>
+			<li><a href="tampil.php">Lihat Data</a></li>
+			<li><a href="#">About</a></li>
+		</ul>
+	</nav>
+	</div>
+</header>
+<h3 align="center">Update Data Mahasiswa</h3>
 <form method="post" action="proses.php?action=update">
 <input type="hidden" name="nim" value="<?php echo $data_identitas['nim']; ?>"/>
-<table>
+<table align="center">
 	<tr>
 		<td>Nama Mahasiswa</td>
 		<td>:</td>
@@ -58,6 +72,36 @@ else
 		<td><input type="submit" name="tombol" value="Update"/></td>
 	</tr>
 </table>
+<br/>
+<section id="baru">
+	<div class="container">
+		<h1> Jangan ngoding kalo gamau pusing ! </h1>
+	</div>
+</section>
+<section id="boxes">
+	<div class="container">
+		<div class="box">
+			<img src="img/admin.png">
+			<h3>Data Admin</h3>
+			<p>
+				Kalau mau melihat data admin secara lengkap? klik aja gambar di atas ini. Tapi ingat, hanya data yang boleh di lihat karena adminnya cewek, kalau mau melihat secara keseluruhan ketemu orang tuanya, lamar dia, nafkahi dia, anda bebas mau ngapain aja. 
+			</p>
+		</div>
+		
+	<div class="kotak">
+			<img src="img/org3.png">
+			<h3>Mahasiswa Ngoding</h3>
+			<p>
+				Bisa Anda bayangkan bagaimana malasnya mahasiswa itu ngoding, jangan anda bilang kalau ngoding itu gampang. Yang gampang itu hanyalah berharap tanpa adanya balasan perasaan. :( 
+			</p>
+		</div>
+		</div>
+</section>
+<footer>
+	<p>
+		<i>Ngoding Dapat Menyebabkan Sakit Kapala Sebelah, Copyright @2019</i>
+	</p>
+</footer>
 </form>
 </body>
 </html>

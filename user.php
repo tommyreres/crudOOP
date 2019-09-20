@@ -11,7 +11,7 @@
 		<h1>Ngoding Sakit Kepala Sebelah <br/>
 		 <?php
 			session_start();
-			if ($_SESSION['level'] != "admin") {
+			if ($_SESSION['level'] != "user") {
 				header("Location: login.php");
 			}
 		 	echo $_SESSION['level']; 
@@ -20,27 +20,25 @@
 	<nav>
 		<ul>
 			<li class="active"><a href="index.php">Home</a></li>
-			<li><a href="tampil.php">Lihat Data</a></li>
-			<li class="sugul"><a href="logout.php">Logout</a></li>
+			<li><a href="tampil2.php">Lihat Data</a></li>
+			<li><a href="logout.php">Logout</a></li>
 		</ul>
 	</nav>
 	</div>
 </header>
-<section id="tampilan">
+<section id="lihatini">
 	<div class="container">
-		<h1>Ngoding Sakit Kepala Pake Banget</h1>
+		<h1>MAHASISWA</h1>
 		<p>
-			Ngoding merupakan sebuah pekerjaan yang awalnya membuat kita pusing, bukan awal saja sih tapi sampai kita berhenti ngoding, pasti pusing.
-			Kenapa Kita Harus ngoding dan mengapa kita membuat kepala kita pusing? Padahal ada pekerjaan yang tidak membuat PUSING?
-			Jawabannya adalah terserah DIA dong, kan yang ngoding bukan lu, yang pusing bukan lu, jadi gaada masalah dengan lu ya, so kita mau ngapain aja terserah kita, karna kita suka pusing makanya ngoding
-			"Hidup Terlalu Singkat Kalau Hanya Untuk Bersantai Ria, Mari Buat Diri Kalian Pusing Dengan Codingan"
-			Muuuuah :*
+			Mahasiswa adalah sebutan bagi orang yang sedang menempuh pendidikan tinggi di sebuah perguruan tinggi yang terdiri atas sekolah tinggi, akademi, dan yang paling umum adalah universitas.
+
+			Sepanjang sejarah, mahasiswa di berbagai negara mengambil peran penting dalam sejarah suatu negara. Misalnya, di Indonesia pada 1965, ribuan mahasiswa berhasil mendesak Presiden Soekarno untuk mundur dari jabatannya. Dan pada pada Mei 1998, ratusan ribu mahasiswa berhasil mendesak Presiden Soeharto untuk melakukan hal yang sama. 
 		</p>
 	</div>
 </section>
 <section id="baru">
 	<div class="container">
-		<h1>Jangan ngoding kalo gamau pusing ! </h1>
+		<h1>Ngapain kesini? Udah konsul dosen atau belum?  </h1>
 	</div>
 </section>
 <section id="boxes">
